@@ -3,39 +3,16 @@ layout: post
 title: Introduction
 ---
 
-*The Strange Case of Dr. Jekyll and Mr. Hyde* tells the story of a lawyer investigating the connection of two persons, Dr. Henry Jekyll and Mr. Edward Hyde. Chief among the novel's supporting cast is a man by the name of Mr. Poole, Dr. Jekyll's loyal butler.
+---------
+Some fun facts about the setup of this project include:
 
------
+## Setup
 
-Poole is the butler for [Jekyll](http://jekyllrb.com), the static site generator. It's designed and developed by [@mdo](https://twitter.com/mdo) to provide a clear and concise foundational setup for any Jekyll site. It does so by furnishing a full vanilla Jekyll install with example layouts, pages, posts, and styles.
+* Built for [Jekyll](http://jekyllrb.com)
+* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
+* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
+* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
 
-There are currently three themes built on Poole:
+Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
 
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
-* [Enfield](http://enfield.getpoole.com)
-
-Learn more and contribute on [GitHub]({{ site.github.repo }}).
-
-### What's included
-
-Poole is a streamlined Jekyll site designed and built as a foundation for building more meaningful themes. Poole, and every theme built on it like this one, includes the following:
-
-* Complete Jekyll setup included (layouts, config, [404]({{ site.baseurl }}/404.html), [RSS feed]({{ site.baseurl }}/atom.xml), posts, and [example page]({{ site.baseurl }}/about))
-* Mobile friendly design and development
-* Easily scalable text and component sizing with `rem` units in the CSS
-* Support for a wide gamut of HTML elements
-* Related posts (time-based, because Jekyll) below each post
-* Syntax highlighting, courtesy Jekyll's built-in support for Rouge
-
-Additional features are available in individual themes.
-
-### Browser support
-
-Poole and its themes are by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.
-
-### Download
-
-These themes are developed on and hosted with GitHub. Head to the [GitHub repository]({{ site.github.repo }}) for downloads, bug reports, and features requests.
-
-Thanks!
+Thanks for reading!

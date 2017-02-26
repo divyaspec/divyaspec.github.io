@@ -3,18 +3,18 @@ layout: page
 title: About
 ---
 
-<p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
-</p>
+I am a Software developer working for a voice based platform. I am really interested and fascinated to learn about technology and trying out different projects and I am also interested to collaborate on open source projects (<i>when I get the confidence and feel ready</i>). I am looking forward to learn and write about technical concepts that I find interesting and would be helpful for others.
 
-In the novel, *The Strange Case of Dr. Jekyll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
-
-There are currently two themes built on Poole:
+For my static blog site, I used Poole since it gives you a mobile friendly design and complete set up for [Jekyll](http://jekyllrb.com) site. There are lot of other themes that you can use from Jekyll sites. However I chose Poole since it support for a wide gamut of HTML elements and syntax highlighting, courtesy Jekyll's built-in support for Rouge.
+There are currently three themes built on Poole:
 
 * [Hyde](http://hyde.getpoole.com)
 * [Lanyon](http://lanyon.getpoole.com)
 
-Learn more and contribute on [GitHub](https://github.com/poole).
+If you like my website, you can follow me on [@divyaspec](https://twitter.com/divyaspec)
+
+
+Thanks!
 
 ## Setup
 

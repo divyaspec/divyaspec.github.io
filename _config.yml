@@ -1,10 +1,17 @@
+# Dependencies
+markdown:         kramdown
+kramdown:
+  extensions: ["tables"]
+
+highlighter:         true
+
 # Permalinks
 permalink:           pretty
 
 # Setup
-title:               Poole
-tagline:             The Jekyll Butler
-url:                 http://getpoole.com
+title:               Divya Surendran
+tagline:
+url:
 paginate:            1
 baseurl:             ""
 
@@ -17,14 +24,14 @@ sass:
 
 # About/contact
 author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+  name:              Divya Surendran
+  url:               https://twitter.com/divyaspec
 
-# Custom vars
-version:             2.0.0
-github:
-  repo:              https://github.com/poole/poole
+# This is the list of pages to include in the header of the website.
+pages_list:
+  About: '/about/'
+  Archive: '/archive/'
+  Feed: '/atom.xml'
 
 # Gems
 gems:
