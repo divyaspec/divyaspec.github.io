@@ -1,5 +1,6 @@
 # Dependencies
 markdown:         kramdown
+
 kramdown:
   extensions: ["tables"]
 
@@ -10,10 +11,9 @@ permalink:           pretty
 
 # Setup
 title:               Divya Surendran
-tagline:
-url:
+tagline:            'The personal website'
+url:                divyaspec.github.io
 paginate:            1
-baseurl:             ""
 
 # Assets
 #

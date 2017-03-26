@@ -1,9 +1,8 @@
 ---
-layout: post
+layout: page
 title: Introduction
 ---
 
----------
 Some fun facts about the setup of this project include:
 
 ## Setup
