@@ -4,7 +4,7 @@
  <title>Divya Surendran</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-03-26T21:10:28+01:00</updated>
+ <updated>2017-03-26T21:29:56+01:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Divya Surendran</name>
@@ -26,7 +26,7 @@
 
 &lt;p&gt;After you have downloaded virtual box and ubuntu image, next step you will need to create a new image.&lt;/p&gt;
 
-&lt;p&gt;You can then create new image as a set up process and also allocate a memory on the new VM (I gave around 15MB). This is a very basic quick set up for anyone to download virtual box and start running a ubuntu server.&lt;/p&gt;
+&lt;p&gt;You can then also allocate memory on the new VM (I gave around 15MB). This is a very basic quick set up for anyone to download virtual box and start running a ubuntu server.&lt;/p&gt;
 </content>
  </entry>
  

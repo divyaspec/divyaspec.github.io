@@ -10,4 +10,4 @@ title: Installing Virtual Box and Unbuntu Image
 
 After you have downloaded virtual box and ubuntu image, next step you will need to create a new image.
 
-You can then create new image as a set up process and also allocate a memory on the new VM (I gave around 15MB). This is a very basic quick set up for anyone to download virtual box and start running a ubuntu server.
+You can then also allocate memory on the new VM (I gave around 15MB). This is a very basic quick set up for anyone to download virtual box and start running a ubuntu server. 
