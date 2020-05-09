@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      Real World Software Development &middot; Divya Surendran
+    
+  </title>
+
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+  <link rel="alternate" type="application/atom+xml" title="Divya Surendran" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="container content">
+      <div class="masthead">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">Divya Surendran</a>
+
+          
+              &nbsp;&nbsp;&nbsp;<small><a href="/about/">About</a></small>
+          
+              &nbsp;&nbsp;&nbsp;<small><a href="/archive/">Archive</a></small>
+          
+              &nbsp;&nbsp;&nbsp;<small><a href="/atom.xml">Feed</a></small>
+          
+
+        </h3>
+      </div>
+
+      <article class="page">
+  <h1 class="page-title">Real World Software Development</h1>
+  <h2 id="key-notes-and-concepts-from-the-book-real-world-software-development">Key notes and concepts from the book <em>Real World Software Development</em>.</h2>
+<p><em>Thanks to the author for describing in detail with solid example.</em></p>
+
+<h3 id="single-responsibility-principle">Single Responsibility Principle</h3>
+
+<ul>
+  <li>A class that has responsibility over a single functionality</li>
+  <li>One reason for the class to change.</li>
+</ul>
+
+<p>For example, in the book the author talks about how we can split a class can be broken down individually:</p>
+
+<ol>
+  <li>Reading input</li>
+  <li>Parsing the input in a given format</li>
+  <li>Processing the result.</li>
+  <li>Reporting the summary of the result.</li>
+</ol>
+
+<h3 id="principle-of-least-surprise">Principle of least surprise</h3>
+
+<p>When you implement methods ensure that it is obvious what is happening when looking at the code.</p>
+
+<ul>
+  <li>Use self-documenting method names so it is immediately obvious what they do.</li>
+  <li>Do not change the state of parameters as other parts of code may depend on it.</li>
+</ul>
+
+<h3 id="cohesion">Cohesion</h3>
+
+<p>Cohesion is concerned with how related things are. To be more precise, cohesion measures how strongly related responsibilities of a class or method are.
+ What do you want is to achieve high cohesion, which means that the code is easier for others to locate, understand and make change.</p>
+
+<p><em>_Cohesion_</em></p>
+
+<h3 id="six-common-ways-to-group-methods">Six common ways to group methods:</h3>
+
+<ul>
+  <li>Functional (high cohesion)</li>
+</ul>
+
+<p>Grouping methods for solving a defined task: parse lines in the CSV format.</p>
+
+<ul>
+  <li>Informational (medium cohesion)</li>
+</ul>
+
+<p>Create, delete, read and update BankTransaction objects (CRUD operations). This way the class will exhibit informational cohesion with four different methods.</p>
+
+<ul>
+  <li>Utility (low cohesion)</li>
+</ul>
+
+<p>Normally when it is not obvious for the methods to be group together, you end up defining it in a utility class with low cohesion. It also exhibit poor discoverability characteristic.</p>
+
+<ul>
+  <li>Logical (medium cohesion)</li>
+</ul>
+
+<p>You need to provide implementation for parsing from CSV, JSON and XML. For this purpose, you can group the methods responsible for different format inside one class.
+In the book, the author describes an example called BankTransactionParser</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class BankTransactionParser {
+
+    public BankTransaction parseFromCSV(final String line) {
+        // ...
+        throw new UnsupportedOperationException();
+    }
+
+    public BankTransaction parseFromJSON(final String line) {
+        // ...
+        throw new UnsupportedOperationException();
+    }
+
+    public BankTransaction parseFromXML(final String line) {
+        // ...
+        throw new UnsupportedOperationException();
+    }
+}
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>Sequential (medium cohesion)
+As the name indicates, you are grouping methods so they follow a sequence of input to output. A better approach is to break down each responsibility inside individual, cohesive classes.</p>
+  </li>
+  <li>
+    <p>Temporal (low cohesion)
+Performs several operations that are only related in time. Example: connecting and closing a database connection.</p>
+  </li>
+</ul>
+
+<h3 id="coupling">Coupling</h3>
+
+<p>Cohesion is about how related things are in class, package or method, coupling is about how dependent you are on other classes. It is about how much knowledge you are relying on about certain classes. The more classes you are rely on, the less flexible you become when introducing changes.</p>
+
+<p>You can decouple different components by using an interface, which is the tool of choice for providing flexibility for changing requirements. Example are as follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public interface BankStatementParser {
+    BankTransaction parseFrom(String line);
+    List&lt;BankTransaction&gt; parseLinesFrom(List&lt;String&gt; lines);
+}
+</code></pre></div></div>
+<p>Your BankStatementCSVParser will now become an implementation of that interface:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class BankStatementCSVParser implements BankStatementParser {
+    // ...
+}
+</code></pre></div></div>
+<p>This way you can decouple the BankStatementAnalyzer from the parser by specific implementation of a BankStatementCSVParser.</p>
+
+<p><img src="/assets/images/RealSoftDev_Coupling.png" alt="image" /></p>
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="/_posts/2018-10-10-Books.md">Books</a></p>
+
+</article>
+
+
+      <div class="footer">
+        <p>
+          &copy; 2020. All rights reserved.
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>

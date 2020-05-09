@@ -97,7 +97,7 @@ public class BankStatementCSVParser implements BankStatementParser {
 ```
 This way you can decouple the BankStatementAnalyzer from the parser by specific implementation of a BankStatementCSVParser. 
 
-![image](/_site/images/RealSoftDev_Coupling.png)
+![image](/assets/images/RealSoftDev_Coupling.png)
 
 
 ## Reference

@@ -4,13 +4,279 @@
  <title>Divya Surendran</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-03-26T21:48:04+01:00</updated>
+ <updated>2020-05-09T22:43:06+01:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Divya Surendran</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Monoliths to Microservices</title>
+   <link href="http://localhost:4000/2020/04/06/Monoliths-to-Microservices/"/>
+   <updated>2020-04-06T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2020/04/06/Monoliths-to-Microservices</id>
+   <content type="html">&lt;h2 id=&quot;what-are-microservices&quot;&gt;What are Microservices?&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;- Microservices are independently deployable services modeled around a business domain.
+- The architecture choices offer many options for solving the problems you may face.
+- Technology agnostic
+- Independent deployability is key.
+- It's also type of SOA, opinionated about how services boundaries should be drawn.
+- Microservices is a form of distributed system where you can expose and encapsulate the business capabilities via one or more network endpoints.
+- Each microservice can communincate with each other via exposed network endpoint.
+- It encapsulates data storage, data retrieval via well defined interfaces. So, the database are hidden inside the service boundary.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Real World Software Development</title>
+   <link href="http://localhost:4000/2020/02/12/Real-World-Software-Development/"/>
+   <updated>2020-02-12T00:00:00+00:00</updated>
+   <id>http://localhost:4000/2020/02/12/Real-World-Software-Development</id>
+   <content type="html">&lt;h2 id=&quot;key-notes-and-concepts-from-the-book-real-world-software-development&quot;&gt;Key notes and concepts from the book &lt;em&gt;Real World Software Development&lt;/em&gt;.&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Thanks to the author for describing in detail with solid example.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;single-responsibility-principle&quot;&gt;Single Responsibility Principle&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A class that has responsibility over a single functionality&lt;/li&gt;
+  &lt;li&gt;One reason for the class to change.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For example, in the book the author talks about how we can split a class can be broken down individually:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Reading input&lt;/li&gt;
+  &lt;li&gt;Parsing the input in a given format&lt;/li&gt;
+  &lt;li&gt;Processing the result.&lt;/li&gt;
+  &lt;li&gt;Reporting the summary of the result.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;principle-of-least-surprise&quot;&gt;Principle of least surprise&lt;/h3&gt;
+
+&lt;p&gt;When you implement methods ensure that it is obvious what is happening when looking at the code.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use self-documenting method names so it is immediately obvious what they do.&lt;/li&gt;
+  &lt;li&gt;Do not change the state of parameters as other parts of code may depend on it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cohesion&quot;&gt;Cohesion&lt;/h3&gt;
+
+&lt;p&gt;Cohesion is concerned with how related things are. To be more precise, cohesion measures how strongly related responsibilities of a class or method are.
+ What do you want is to achieve high cohesion, which means that the code is easier for others to locate, understand and make change.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;_Cohesion_&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;six-common-ways-to-group-methods&quot;&gt;Six common ways to group methods:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Functional (high cohesion)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Grouping methods for solving a defined task: parse lines in the CSV format.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Informational (medium cohesion)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Create, delete, read and update BankTransaction objects (CRUD operations). This way the class will exhibit informational cohesion with four different methods.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Utility (low cohesion)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Normally when it is not obvious for the methods to be group together, you end up defining it in a utility class with low cohesion. It also exhibit poor discoverability characteristic.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Logical (medium cohesion)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You need to provide implementation for parsing from CSV, JSON and XML. For this purpose, you can group the methods responsible for different format inside one class.
+In the book, the author describes an example called BankTransactionParser&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class BankTransactionParser {
+
+    public BankTransaction parseFromCSV(final String line) {
+        // ...
+        throw new UnsupportedOperationException();
+    }
+
+    public BankTransaction parseFromJSON(final String line) {
+        // ...
+        throw new UnsupportedOperationException();
+    }
+
+    public BankTransaction parseFromXML(final String line) {
+        // ...
+        throw new UnsupportedOperationException();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sequential (medium cohesion)
+As the name indicates, you are grouping methods so they follow a sequence of input to output. A better approach is to break down each responsibility inside individual, cohesive classes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Temporal (low cohesion)
+Performs several operations that are only related in time. Example: connecting and closing a database connection.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;coupling&quot;&gt;Coupling&lt;/h3&gt;
+
+&lt;p&gt;Cohesion is about how related things are in class, package or method, coupling is about how dependent you are on other classes. It is about how much knowledge you are relying on about certain classes. The more classes you are rely on, the less flexible you become when introducing changes.&lt;/p&gt;
+
+&lt;p&gt;You can decouple different components by using an interface, which is the tool of choice for providing flexibility for changing requirements. Example are as follows:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public interface BankStatementParser {
+    BankTransaction parseFrom(String line);
+    List&amp;lt;BankTransaction&amp;gt; parseLinesFrom(List&amp;lt;String&amp;gt; lines);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Your BankStatementCSVParser will now become an implementation of that interface:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class BankStatementCSVParser implements BankStatementParser {
+    // ...
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;This way you can decouple the BankStatementAnalyzer from the parser by specific implementation of a BankStatementCSVParser.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/RealSoftDev_Coupling.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;/_posts/2018-10-10-Books.md&quot;&gt;Books&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Web Scraping</title>
+   <link href="http://localhost:4000/2020/01/02/automate-borng-stuff-in-python/"/>
+   <updated>2020-01-02T00:00:00+00:00</updated>
+   <id>http://localhost:4000/2020/01/02/automate-borng-stuff-in-python</id>
+   <content type="html">&lt;p&gt;I thought to start the new year to quickly whiz through and brush up my pythonic skills. Whats better way to learn than automating the boring stuff. Hence, I picked the book written by Al Sweigart, a great book for total beginners.&lt;/p&gt;
+
+&lt;p&gt;The most interesting stuff I would like to learn is how to web scrape web pages in Python. I have been using automation tool like Selenium at work, therefore using Selenium module to fill in forms and simulate mouse clicks in the browser would be a great way to kick start automating the boring stuff.&lt;/p&gt;
+
+&lt;p&gt;Using mapIt.py, you can launch a map in the browser using an address from the command like or clipboard.&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+&lt;p&gt;Thanks to author for sharing the code in github.
+&lt;a href=&quot;https://github.com/iliyahoo/Automate-The-Boring-Stuff-With-Python/blob/master/automate_online-materials/mapIt.py&quot;&gt;Automate-The-Boring-Stuff-With-Python&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Books</title>
+   <link href="http://localhost:4000/2018/10/10/Books/"/>
+   <updated>2018-10-10T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2018/10/10/Books</id>
+   <content type="html">&lt;h2 id=&quot;tech&quot;&gt;Tech&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.amazon.co.uk/Kubernetes-Running-Dive-Future-Infrastructure-ebook/dp/B07YP1XSZ9/ref=sr_1_2?dchild=1&amp;amp;keywords=Kubernetes+in+action&amp;amp;qid=1589026579&amp;amp;s=digital-text&amp;amp;sr=1-2&quot;&gt;Kubernetes in Action by Marko Lukša&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.amazon.co.uk/Real-World-Software-Development-Project-Driven-Fundamentals-ebook/dp/B0828B1HGH/ref=sr_1_3?dchild=1&amp;amp;keywords=Real+Software+development&amp;amp;qid=1589026510&amp;amp;s=digital-text&amp;amp;sr=1-3&quot;&gt;Real-World Software Development&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>What's AOP and how Spring uses it within its framework?</title>
+   <link href="http://localhost:4000/2018/08/16/whats-AOP/"/>
+   <updated>2018-08-16T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2018/08/16/whats-AOP</id>
+   <content type="html">&lt;p&gt;Spring in Action states about AOP as follows “Spring’s AOP framework allows you to code functionality that is sprinkled throughout your application in one place—an aspect”.&lt;/p&gt;
+
+&lt;p&gt;Say for example your application has several modules and you want to maintain a common set of functionality that cross cuts the modules like reusing common functionality. The common methdology is using technique that is part of OO concept (inheritance, delegates etc). But inheritance can lead to brittle object hierarchy that is used throughout the application across various modules and delegates can be cumbersome. This is where AOP comes handy and following aspect terminology describes the common concepts covered in AOP.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Aspect - Most commonly logging is quite crucial part of application and we can define our own logging aspect that can be applied to different modules (like common resuable code).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Jointpoint - Its like a plug that can be inserted into your code (for example., aspect can be aspet’s code can be inserted into your code to add a new behaviour).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Advice is actual implementation of aspect. It is advising your application of new behaviour. Logging advice would contain the code that implements the actual logging such as writing to a log file.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;/* Spring Aspect */&lt;/p&gt;
+
+&lt;p&gt;Java annonatations are quite a powerful concept and there are several of them that are used in standard library.&lt;/p&gt;
+
+&lt;p&gt;@Retention -  “Indicates how long annotations with the annotated type are to be retained.” [2] Used to mark another annotation.&lt;/p&gt;
+
+&lt;p&gt;@Aspect 
+The aspect annotation&lt;/p&gt;
+
+&lt;p&gt;@Rentention(RentitionPolicy.Runtime)
+public interface Aspect {
+    public String value() default “ “;
+}&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Handy articles?</title>
+   <link href="http://localhost:4000/2018/07/16/handy-articles0/"/>
+   <updated>2018-07-16T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2018/07/16/handy-articles0</id>
+   <content type="html">&lt;p&gt;Below are some of the articles that I really enjoyed reading and found it handy to apply when and wherever I can.&lt;/p&gt;
+
+&lt;h2 id=&quot;tech&quot;&gt;Tech&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://increment.com/open-source/more-productive-git/?utm_medium=email&amp;amp;utm_source=topic+optin&amp;amp;utm_campaign=awareness&amp;amp;utm_content=20190810+prog+nl&amp;amp;mkt_tok=eyJpIjoiWkdKa1ptWmtZekl5TUdKbCIsInQiOiJQSUtMWFdSNXV6V1F5S0pCN09PbnBIaFVwNWRBQVN3T1lBVFRMcTRDenJvSlRDc1ZrNVFlR0ZNbHpPSTE4eFwvN2kyakpTMXo1NjZ0VnBaVGk1VTN0c202eURiaGJVY2NvSWNFZHA0RW1Gb3NKUXR3RzRRK2tubDdBdkNwdTNKZzYifQ%3D%3D&quot;&gt;Git Super Powers&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://blog.scottnonnenberg.com/better-git-configuration/&quot;&gt;Git-diff&lt;/a&gt; here. If anyone wants to check out the short cuts of git commands and colourful way of viewing git-diff, I bet you would love this blog post and start editing your global git config.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://neovim.io/&quot;&gt;NeoVim&lt;/a&gt; If you are interested in using fancy command line editor,&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://vim.liuchengxu.org/&quot;&gt;SpaceVim&lt;/a&gt; Elegant way of using vim editor!!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;productivity&quot;&gt;Productivity&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.scotthyoung.com/blog/?inf_contact_key=b93f88bde7cb373fe1aedd6db585f0148adea735b02e8b4142b407f7f4dd0544&quot;&gt;Focus&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Exercism Set up</title>
+   <link href="http://localhost:4000/2017/12/28/Exercism-Set-Up/"/>
+   <updated>2017-12-28T00:00:00+00:00</updated>
+   <id>http://localhost:4000/2017/12/28/Exercism-Set-Up</id>
+   <content type="html">&lt;h2 id=&quot;exercism&quot;&gt;&lt;a href=&quot;https://exercism.io/tracks/go&quot;&gt;Exercism&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;A great platform that is completely open source to learn programming language.
+I learn Go by joining Go track. Its brilliant and recommend to anyone willing
+to learn new language.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Git Configuration</title>
+   <link href="http://localhost:4000/2017/04/09/Git-Configuration/"/>
+   <updated>2017-04-09T00:00:00+01:00</updated>
+   <id>http://localhost:4000/2017/04/09/Git-Configuration</id>
+   <content type="html">&lt;h2 id=&quot;better-git-configuration&quot;&gt;Better Git Configuration&lt;/h2&gt;
+
+&lt;p&gt;Everyone likes GIT as it is amazing and all time favourite source control system. Recently I come across a post written by Scott &lt;a href=&quot;https://blog.scottnonnenberg.com/better-git-configuration/&quot;&gt;link&lt;/a&gt; here. If anyone wants to check out the short cuts of git commands and colourful way of viewing git-diff, I bet you would love this blog post and start editing your global git config.&lt;/p&gt;
+
+&lt;p&gt;Also if you are interested, checkout space-vim (&lt;a href=&quot;http://vim.liuchengxu.org/&quot;&gt;link&lt;/a&gt;) and neovim (&lt;a href=&quot;https://neovim.io/&quot;&gt;link&lt;/a&gt;)….elegant way of using vim editor!!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Installing Virtual Box and Unbuntu Image</title>

@@ -1,0 +1,30 @@
+I"<p>Spring in Action states about AOP as follows “Spring’s AOP framework allows you to code functionality that is sprinkled throughout your application in one place—an aspect”.</p>
+
+<p>Say for example your application has several modules and you want to maintain a common set of functionality that cross cuts the modules like reusing common functionality. The common methdology is using technique that is part of OO concept (inheritance, delegates etc). But inheritance can lead to brittle object hierarchy that is used throughout the application across various modules and delegates can be cumbersome. This is where AOP comes handy and following aspect terminology describes the common concepts covered in AOP.</p>
+
+<ol>
+  <li>
+    <p>Aspect - Most commonly logging is quite crucial part of application and we can define our own logging aspect that can be applied to different modules (like common resuable code).</p>
+  </li>
+  <li>
+    <p>Jointpoint - Its like a plug that can be inserted into your code (for example., aspect can be aspet’s code can be inserted into your code to add a new behaviour).</p>
+  </li>
+  <li>
+    <p>Advice is actual implementation of aspect. It is advising your application of new behaviour. Logging advice would contain the code that implements the actual logging such as writing to a log file.</p>
+  </li>
+</ol>
+
+<p>/* Spring Aspect */</p>
+
+<p>Java annonatations are quite a powerful concept and there are several of them that are used in standard library.</p>
+
+<p>@Retention -  “Indicates how long annotations with the annotated type are to be retained.” [2] Used to mark another annotation.</p>
+
+<p>@Aspect 
+The aspect annotation</p>
+
+<p>@Rentention(RentitionPolicy.Runtime)
+public interface Aspect {
+    public String value() default “ “;
+}</p>
+:ET
