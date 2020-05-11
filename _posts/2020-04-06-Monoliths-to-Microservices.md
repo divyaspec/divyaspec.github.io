@@ -23,7 +23,7 @@ This ensures you don't need to make changes to two servies to roll out a feature
 *_Dont share database unless you really have to. It breaks the independent deployablity_*
 *_Where appropriate encapsulate UI, application logic and data storage as we want our service as end-to-end slices of business functionality_*
 
-### Advantage of Microservice
+### Advantage of Microservices
 
 * Independent deployability means scale and robustness of the system can be greatly improved.
 * Process isolation makes it possible to mix and match the technology choices we make (eg., programming styles, languages, databases or deployment platforms).
