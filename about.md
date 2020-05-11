@@ -16,7 +16,7 @@ I used Lanyon theme for my blog. You can view the folder structure on poole gith
 
 If you like my website, you can follow me on [@divyaspec](https://twitter.com/divyaspec).
 
-My personal projects can be checkout out at [github-projects](https://github.com/divyaspec)
+For checking out my personal projects, please follow the link [github-projects](https://github.com/divyaspec)
 
 
 Thanks for reading!
