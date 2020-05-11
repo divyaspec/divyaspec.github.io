@@ -30,8 +30,6 @@ When you implement methods ensure that it is obvious what is happening when look
 Cohesion is concerned with how related things are. To be more precise, cohesion measures how strongly related responsibilities of a class or method are.
  What do you want is to achieve high cohesion, which means that the code is easier for others to locate, understand and make change.
 
- *_Cohesion_*
-
 ### Six common ways to group methods in a class:
 
 * Functional (high cohesion)

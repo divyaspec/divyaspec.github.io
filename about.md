@@ -14,9 +14,7 @@ There are currently two themes built on Poole:
 
 I used Lanyon theme for my blog. You can view the folder structure on poole github repo and download the template to get started. The folder structure is very minimal so easy to customize the \_config file. All the blog posts are in markdown format (a great tutorial for [Markdown](http://daringfireball.net/projects/markdown/), which is a very easy way to write content in web.
 
-If you like my website, you can follow me on [@divyaspec](https://twitter.com/divyaspec).
-
-For checking out my personal projects, please follow the link [github-projects](https://github.com/divyaspec)
+If you like my website, you can follow me on [@divyaspec](https://twitter.com/divyaspec) and also do check out my personal projects [github-projects](https://github.com/divyaspec).
 
 
 Thanks for reading!
