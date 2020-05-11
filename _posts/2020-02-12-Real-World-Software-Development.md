@@ -32,7 +32,7 @@ Cohesion is concerned with how related things are. To be more precise, cohesion 
 
  *_Cohesion_*
 
-### Six common ways to group methods:
+### Six common ways to group methods in a class:
 
 * Functional (high cohesion)
 
