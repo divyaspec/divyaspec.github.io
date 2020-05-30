@@ -97,7 +97,18 @@ This way you can decouple the BankStatementAnalyzer from the parser by specific 
 
 ![image](/assets/images/RealSoftDev_Coupling.png)
 
+## Rest API based App
+By using the example code from the book, I started to work on a side project that will expose a file upload endpoint via Swagger API. The endpoint will consume any bank statement CSV file with date, amount and description as described in the book examples. However, I decided to create a microservice and dockerize it.  
+
+## how to dockerize MySQL container
+
+
+```
+$ docker run --restart always --name mysql8.0 --net dev-network -v /Users/[your_username]/Develop/mysql_data/8.0:/var/lib/mysql -p 3306:3306 -d -e MYSQL_ROOT_PASSWORD=[your_password] mysql:8.0
+```
 
 ## Reference
 
 [Books](/_posts/2018-10-10-Books.md)
+[Dockerize MySQL](https://medium.com/@crmcmullen/how-to-run-mysql-in-a-docker-container-on-macos-with-persistent-local-data-58b89aec496a)
+[github link to my project](https://github.com/divyaspec/bank)
