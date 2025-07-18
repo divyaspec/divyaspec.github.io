@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-I am a Software developer honing my technical skills to build and solve problems. With my past experience in support role, I developed a great passion to break into developing software. My interests are learning and becoming a good software engineer. I enjoy being involved in design and architectural discussions of developing a product. I also enjoy sharing what I've learned through this blog.
+I am a Software developer honing my technical skills to build and solve problems. With my engineering background, I developed a great passion in developing software. My interests are learning and becoming a good software engineer. I enjoy being involved in design and architectural discussions of developing a product. I also enjoy sharing what I've learned through this blog. 
 
 For my static blog site, I used Poole since it provides you a mobile friendly design and complete set up for [Jekyll](http://jekyllrb.com) site. There are lot of other themes that you can use from Jekyll sites. However I went for Poole since it supports for a wide gamut of HTML elements and syntax highlighting, courtesy Jekyll's built-in support for Rouge.
 
